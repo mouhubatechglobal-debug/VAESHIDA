@@ -1,0 +1,34 @@
+{
+    "name": "VAESHIDA",
+    "tree": {
+        "$className": "DataModel",
+
+        "ReplicatedStorage": {
+            "$className": "ReplicatedStorage",
+
+            "VAESHIDA": {
+                "$path": "src/luau/shared/VAESHIDA"
+            }
+        },
+
+        "ServerScriptService": {
+            "$className": "ServerScriptService",
+
+            "VAESHIDA": {
+                "$path": "src/luau/server/VAESHIDA"
+            }
+        },
+
+        "StarterPlayer": {
+            "$className": "StarterPlayer",
+
+            "StarterPlayerScripts": {
+                "$className": "StarterPlayerScripts",
+
+                "VAESHIDA": {
+                    "$path": "src/luau/client/VAESHIDA"
+                }
+            }
+        }
+    }
+}
