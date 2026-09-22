@@ -1,7 +1,8 @@
 local Players = game:GetService("Players")
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
 
 local PlayerConfig = require(
-    game:GetService("ReplicatedStorage")
+    ReplicatedStorage
         :WaitForChild("VAESHIDA")
         :WaitForChild("Config")
         :WaitForChild("PlayerConfig")
@@ -32,18 +33,64 @@ function PlayerService.InitializePlayer(player)
         return
     end
 
-    playerData[player] = createPlayerData()
+    local data = createPlayerData()
+
+    playerData[player] = data
 
     print(
         "[VAESHIDA] Joueur initialisé : "
             .. player.Name
             .. " | Niveau : "
-            .. playerData[player].Level
+            .. data.Level
+            .. " | HP : "
+            .. data.Stats.Health
+            .. " | Énergie : "
+            .. data.Stats.Energy
     )
 end
 
 function PlayerService.RemovePlayer(player)
     playerData[player] = nil
+end
+
+function PlayerService.GetLevel(player)
+    local data = playerData[player]
+
+    if not data then
+        return nil
+    end
+
+    return data.Level
+end
+
+function PlayerService.GetXP(player)
+    local data = playerData[player]
+
+    if not data then
+        return nil
+    end
+
+    return data.XP
+end
+
+function PlayerService.GetHealth(player)
+    local data = playerData[player]
+
+    if not data then
+        return nil
+    end
+
+    return data.Stats.Health
+end
+
+function PlayerService.GetEnergy(player)
+    local data = playerData[player]
+
+    if not data then
+        return nil
+    end
+
+    return data.Stats.Energy
 end
 
 Players.PlayerAdded:Connect(function(player)
