@@ -1,13 +1,17 @@
---[[
+local ReplicatedStorage = game:GetService("ReplicatedStorage")
+
+local VAESHIDA = ReplicatedStorage:WaitForChild("VAESHIDA")
+
+local MovementController = require(
     VAESHIDA
-    Client Bootstrap
+        :WaitForChild("Controllers")
+        :WaitForChild("MovementController")
+)
 
-    Rôle :
-    Point d'entrée initial du client VAESHIDA.
+print("================================")
+print("[VAESHIDA] CLIENT INITIALISÉ")
+print("================================")
 
-    Ce script servira à vérifier que le client
-    communique correctement avec notre architecture.
-]]
-
-print("[VAESHIDA] Client démarré.")
 print("[VAESHIDA] Architecture client chargée.")
+
+MovementController.Initialize()
