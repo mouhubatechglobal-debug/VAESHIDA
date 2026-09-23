@@ -12,6 +12,12 @@ local TestWorldService = require(
         :WaitForChild("TestWorldService")
 )
 
+local QuestService = require(
+    script.Parent
+        :WaitForChild("Services")
+        :WaitForChild("QuestService")
+)
+
 print("================================")
 print("[VAESHIDA] SERVEUR INITIALISÉ")
 print("================================")
@@ -22,4 +28,7 @@ for _, player in Players:GetPlayers() do
     PlayerService.InitializePlayer(player)
 end
 
+QuestService.Initialize()
+
 print("[VAESHIDA] Services serveur chargés.")
+print("[VAESHIDA] Système de quêtes chargé.")
