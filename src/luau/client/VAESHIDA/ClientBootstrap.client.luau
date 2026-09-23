@@ -8,10 +8,17 @@ local MovementController = require(
         :WaitForChild("MovementController")
 )
 
+local CameraController = require(
+    VAESHIDA
+        :WaitForChild("Controllers")
+        :WaitForChild("CameraController")
+)
+
 print("================================")
 print("[VAESHIDA] CLIENT INITIALISÉ")
 print("================================")
 
-print("[VAESHIDA] Architecture client chargée.")
-
 MovementController.Initialize()
+CameraController.Initialize()
+
+print("[VAESHIDA] Systèmes client chargés.")
