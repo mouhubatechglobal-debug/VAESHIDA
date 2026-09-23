@@ -38,3 +38,5 @@ venv/
 dist/
 build/
 coverage/
+
+sourcemap.json

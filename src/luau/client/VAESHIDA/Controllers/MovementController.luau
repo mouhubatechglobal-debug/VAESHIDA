@@ -12,6 +12,8 @@ local MovementController = {}
 
 local player = Players.LocalPlayer
 
+local initialized = false
+
 local function configureCharacter(character)
     local humanoid = character:WaitForChild("Humanoid")
 
@@ -21,7 +23,10 @@ local function configureCharacter(character)
         humanoid.UseJumpPower = true
         humanoid.JumpPower = MovementConfig.JumpPower
     else
-        humanoid:SetStateEnabled(Enum.HumanoidStateType.Jumping, false)
+        humanoid:SetStateEnabled(
+            Enum.HumanoidStateType.Jumping,
+            false
+        )
     end
 
     print(
@@ -34,6 +39,18 @@ local function configureCharacter(character)
 end
 
 function MovementController.Initialize()
+    if initialized then
+        warn(
+            "[VAESHIDA][MovementController] "
+                .. "Initialize() appelé plusieurs fois. "
+                .. "Initialisation ignorée."
+        )
+
+        return
+    end
+
+    initialized = true
+
     if player.Character then
         configureCharacter(player.Character)
     end
@@ -45,4 +62,4 @@ function MovementController.Initialize()
     print("[VAESHIDA] MovementController initialisé.")
 end
 
-MovementController.Initialize()
+return MovementController
