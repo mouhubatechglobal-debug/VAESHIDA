@@ -18,6 +18,12 @@ local QuestService = require(
         :WaitForChild("QuestService")
 )
 
+local NPCService = require(
+    script.Parent
+        :WaitForChild("Services")
+        :WaitForChild("NPCService")
+)
+
 print("================================")
 print("[VAESHIDA] SERVEUR INITIALISÉ")
 print("================================")
@@ -30,5 +36,8 @@ end
 
 QuestService.Initialize()
 
+NPCService.Initialize()
+
 print("[VAESHIDA] Services serveur chargés.")
 print("[VAESHIDA] Système de quêtes chargé.")
+print("[VAESHIDA] Système de PNJ chargé.")

@@ -20,6 +20,12 @@ local QuestController = require(
         :WaitForChild("QuestController")
 )
 
+local DialogueController = require(
+    VAESHIDA
+        :WaitForChild("Controllers")
+        :WaitForChild("DialogueController")
+)
+
 print("================================")
 print("[VAESHIDA] CLIENT INITIALISÉ")
 print("================================")
@@ -27,5 +33,6 @@ print("================================")
 MovementController.Initialize()
 CameraController.Initialize()
 QuestController.Initialize()
+DialogueController.Initialize()
 
 print("[VAESHIDA] Systèmes client chargés.")
